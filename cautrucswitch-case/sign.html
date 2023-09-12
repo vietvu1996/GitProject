@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cấu trúc Switch Case</title>
+  </head>
+  <body>
+    <script>
+      let number = +prompt("Type a number");
+      let value = number < 0;
+      switch (number) {
+        case 0:
+          alert(0);
+          break;
+        default:
+          switch (value) {
+            case true:
+              alert(-1);
+              break;
+            case false:
+              alert(1);
+          }
+      }
+    </script>
+  </body>
+</html>

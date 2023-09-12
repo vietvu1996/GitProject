@@ -6,57 +6,66 @@
     <title>Caculator</title>
   </head>
   <body>
-    <h1>Calculator</h1>
-    <div>
-      <input
-        type="number"
-        name="num1"
-        id="num1"
-        placeholder="Nhập số thứ nhất"
-      />
-      <input
-        type="number"
-        name="num2"
-        id="num2"
-        placeholder="Nhập số thứ hai"
-      />
-    </div>
-
+    <input type="text" id="num1" placeholder="Nhập số thứ nhất" />
+    <input type="text" id="num2" placeholder="Nhập số thứ 2" />
     <br />
-
-    <div>
-      <button id="add" class="button" onclick="calculate(this.value)" value="+">
-        Addition (+)
-      </button>
-      <button id="sub" class="button" onclick="calculate(this.value)" value="-">
-        Subtraction (-)
-      </button>
-      <button id="mul" class="button" onclick="calculate(this.value)" value="*">
-        Multiplication (x)
-      </button>
-      <button id="div" class="button" onclick="calculate(this.value)" value="/">
-        Division (/)
-      </button>
-    </div>
-
-    <p id="result"></p>
-
+    <button id="Add" value="Addition(+)" onclick="Add()">Addition(+)</button>
+    <button id="Sub" value="Subtraction(-)" onclick="Sub()">
+      Subtraction(-)
+    </button>
+    <button id="Mul" value="Multiplication(*)" onclick="Mul()">
+      Multiplication(*)
+    </button>
+    <button id="Div" value="Division(/)" onclick="Div()">Division(/)</button>
+    <p id="result">Result:</p>
+    <br />
+    <input type="text" name="calResult" id="calResult" />
+    <button type="button" onclick="cal(1)">1</button>
+    <button type="button" onclick="cal(2)">2</button>
+    <button type="button" onclick="cal('+')">+</button>
+    <button type="button" onclick="result()">=</button>
+    <button type="button" onclick="location.reload()">Reset</button>
     <script>
-      function calculate(param) {
-        let num1 = +document.getElementById("num1").value;
-        let num2 = +document.getElementById("num2").value;
+      function Add() {
+        let num1 = parseFloat(document.getElementById("num1").value);
+        let num2 = parseFloat(document.getElementById("num2").value);
         let result;
-        result = eval(num1 + param + num2);
-        // if (add.value == "+") {
-        //   result = num1 + num2;
-        // } else if (sub.value == "-") {
-        //   result = num1 - num2;
-        // } else if (mul.value == "*") {
-        //   result = num1 * num2;
-        // } else if (div.value == "/") {
-        //   let result = num1 / num2;
-        // }
-        document.getElementById("result").innerHTML = "Result: " + result;
+        result = num1 + num2;
+        document.getElementById("result").innerHTML = result;
+      }
+      function Sub() {
+        let num1 = parseFloat(document.getElementById("num1").value);
+        let num2 = parseFloat(document.getElementById("num2").value);
+        let result;
+        result = num1 - num2;
+        document.getElementById("result").innerHTML = result;
+      }
+      function Mul() {
+        let num1 = parseFloat(document.getElementById("num1").value);
+        let num2 = parseFloat(document.getElementById("num2").value);
+        let result;
+        result = num1 * num2;
+        document.getElementById("result").innerHTML = result;
+      }
+      function Div() {
+        let num1 = parseFloat(document.getElementById("num1").value);
+        let num2 = parseFloat(document.getElementById("num2").value);
+        let result;
+        result = num1 / num2;
+        document.getElementById("result").innerHTML = result;
+      }
+
+      //Bài anh Huy chỉ
+      let str = document.getElementById("calResult");
+
+      function cal(params) {
+        str.value += params;
+        console.log(str.value);
+      }
+
+      function result() {
+        let result = eval(str.value);
+        str.value = result;
       }
     </script>
   </body>

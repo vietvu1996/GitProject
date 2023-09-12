@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tính năm nhuận</title>
+  </head>
+  <body>
+    <script>
+      let year = parseInt(prompt("Nhập năm: "));
+      let isleapyear = false;
+
+      let isDivby4 = year % 4 == 0;
+      if (isDivby4) {
+        let isDivby100 = year % 100 == 0;
+        if (isDivby100) {
+          let isDivby400 = year % 400 == 0;
+          if (isDivby400) {
+            isleapyear = true;
+          }
+        }
+      } else {
+        isleapyear = true;
+      }
+      if (isleapyear) [alert(year + " là năm nhuận")];
+      else {
+        alert(year + " không phải là năm nhuận");
+      }
+    </script>
+  </body>
+</html>

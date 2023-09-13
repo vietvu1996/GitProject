@@ -17,7 +17,11 @@
           let isDivby400 = year % 400 == 0;
           if (isDivby400) {
             isleapyear = true;
+          } else {
+            isleapyear = false;
           }
+        } else {
+          isleapyear = true;
         }
       } else {
         isleapyear = true;

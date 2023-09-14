@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tuổi tác</title>
+  </head>
+  <body>
+    <span>Nhập số tuổi</span>
+    <input type="text" id="age" />
+    <input type="button" onclick="checkage()" value="Kết quả" />
+    <br />
+    <br />
+    <span id="result"></span>
+    <script>
+      function checkage() {
+        let a = +document.getElementById("age").value;
+        if (a < 120 && a > 0) {
+          document.getElementById("result").innerHTML =
+            "Đây là tuổi của một người";
+        } else {
+          document.getElementById("result").innerHTML =
+            "Đây không phải là tuổi của một người";
+        }
+      }
+    </script>
+  </body>
+</html>

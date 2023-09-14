@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chuyển đổi</title>
+  </head>
+  <body>
+    <span>Nhập giá trị mét</span>
+    <input type="text" id="chuyendoi" />
+    <input type="button" onclick="check()" value="Kết quả" />
+    <br />
+    <br />
+    <span id="result"></span>
+    <script>
+      function check() {
+        let m = document.getElementById("chuyendoi").value;
+        let ft = m * 3.2808;
+        document.getElementById("result").innerHTML =
+          "Giá trị của feet là: " + ft;
+      }
+    </script>
+  </body>
+</html>

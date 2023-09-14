@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Diện tích hình chữ nhật</title>
+  </head>
+  <body>
+    <span>Nhập cạnh a: </span>
+    <input type="text" id="a" />
+    <span>Nhập cạnh b: </span>
+    <input type="text" id="b" />
+    <input type="button" onclick="submit()" value="Kết quả" />
+    <br />
+    <br />
+    <span id="result"></span>
+    <script>
+      function submit() {
+        let a = document.getElementById("a").value;
+        let b = document.getElementById("b").value;
+        area = (a * b) / 2;
+        document.getElementById("result").innerHTML =
+          "Diện tích tam giác vuông bằng: " + area;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chuyển đổi nhiệt độ</title>
+  </head>
+  <body>
+    <span>Nhập độ C (Celsius)</span>
+    <input type="text" id="nhietdo" />
+    <input type="button" onclick="check()" value="Kết quả" />
+    <br />
+    <br />
+    <span id="result"></span>
+    <script>
+      function check() {
+        let doC = document.getElementById("nhietdo").value;
+        let doF = (doC * 9) / 5 + 32;
+        document.getElementById("result").innerHTML =
+          "Giá trị của độ F là: " + doF;
+      }
+    </script>
+  </body>
+</html>

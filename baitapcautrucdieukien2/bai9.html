@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cạnh của 1 tam giác</title>
+  </head>
+  <body>
+    <span>Nhập vào cạnh a</span>
+    <input type="text" id="canh1" />
+    <span>Nhập vào cạnh b</span>
+    <input type="text" id="canh2" />
+    <span>Nhập vào cạnh c</span>
+    <input type="text" id="canh3" />
+    <input type="button" value="Kết quả" onclick="kiemtracanh()" />
+    <br />
+    <br />
+    <span id="result"></span>
+    <script>
+      let a = +document.getElementById("canh1").value;
+      let b = +document.getElementById("canh2").value;
+      let c = +document.getElementById("canh3").value;
+      function kiemtracanh() {
+        switch (a && b && c) {
+          case a && b && c > 0:
+          case a + b > c:
+          case b + c > a:
+          case a + c > b:
+            document.getElementById("result").innerHTML =
+              "Đây có thể là cạnh của 1 tam giác";
+            break;
+          default:
+            document.getElementById("result").innerHTML =
+              "Đây có thể không phải là cạnh của 1 tam giác";
+        }
+      }
+    </script>
+  </body>
+</html>

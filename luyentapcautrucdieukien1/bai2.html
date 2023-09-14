@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>conditon statement</title>
+  </head>
+  <body>
+    <input type="text" id="age" placeholder="Nhập tuổi" />
+    <input type="button" onclick="checkage()" value="Kiểm tra" />
+    <p id="result"></p>
+    <script>
+      function checkage() {
+        var age = +document.getElementById("age").value;
+        var sotuoihoclop10 = 16;
+        if (age < sotuoihoclop10) {
+          document.getElementById("result").innerHTML =
+            "Học sinh không đủ tuổi học lớp 10";
+        } else {
+          document.getElementById("result").innerHTML =
+            "Học sinh đủ tuổi học lớp 10";
+        }
+      }
+    </script>
+  </body>
+</html>

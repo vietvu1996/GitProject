@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tính cước điện thoại</title>
+  </head>
+  <body>
+    <p>Chọn nhà mạng</p>
+    <select name="nhamang" id="nhamang1">
+      <option value="viettel">viettel</option>
+      <option value="mobiphone">mobiphone</option>
+      <option value="vinaphone">vinaphone</option>
+    </select>
+    <button type="button" onclick="choose()">Choose</button>
+    <span id="result"></span>
+    <script>
+      let viettel = 1000;
+      let mobiphone = 2000;
+      let vinaphone = 3000;
+      function choose() {
+        let result = "";
+        let id = document.getElementById("nhamang1").value;
+        switch (id) {
+          case "viettel":
+            result = viettel;
+            break;
+          case "mobiphone":
+            result = mobiphone;
+            break;
+          case "vinaphone":
+            result = vinaphone;
+            break;
+
+          default:
+            result = "invalid";
+            break;
+        }
+        document.getElementById("result").innerHTML = "Giá cước là: " + result;
+      }
+    </script>
+  </body>
+</html>

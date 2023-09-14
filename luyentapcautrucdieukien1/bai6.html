@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tính hoa hồng</title>
+  </head>
+  <body>
+    <p>Nhập doanh số bán hàng:</p>
+    <input type="text" id="commission" />
+    <input type="button" onclick="checkcommission()" value="Kiểm tra" />
+    <p id="result"></p>
+    <script>
+      function checkcommission() {
+        let a = +document.getElementById("commission").value;
+        let result = a * 0.05;
+        if (a > 100 && a < 200) {
+          document.getElementById("result").innerHTML =
+            "Hoa hồng là: " + result + " triệu đồng";
+        } else if (a > 200 && a < 300) {
+          document.getElementById("result").innerHTML =
+            "Hoa hồng là: " + result + " triệu đồng";
+        } else if (a > 300 && a < 400) {
+          document.getElementById("result").innerHTML =
+            "Hoa hồng là: " + result + " triệu đồng";
+        } else {
+          document.getElementById("result").innerHTML =
+            "Hoa hồng là: " + result + " triệu đồng";
+        }
+      }
+    </script>
+  </body>
+</html>

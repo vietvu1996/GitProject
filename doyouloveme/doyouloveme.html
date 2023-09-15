@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Do you love me</title>
+    <style></style>
+  </head>
+  <body>
+    <h2>DO YOU LOVE ME</h2>
+    <div style="position: relative">
+      <input
+        type="button"
+        onclick="yes()"
+        value="YES"
+        style="position: absolute; left: 285px; top: 235px"
+      />
+      <input
+        type="button"
+        id="no"
+        value="NO"
+        onmouseout="hover()"
+        style="position: absolute; left: 360px; top: 235px"
+      />
+    </div>
+    <script>
+      function yes() {
+        alert("<3");
+      }
+      function hover() {
+        var x = Math.random() * window.innerWidth;
+        var y = Math.random() * window.innerHeight;
+        document.getElementById("no").style.left = x + "px";
+        document.getElementById("no").style.top = y + "px";
+      }
+    </script>
+  </body>
+</html>

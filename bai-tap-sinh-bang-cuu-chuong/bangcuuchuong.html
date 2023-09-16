@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bảng cửu chương</title>
+  </head>
+  <body>
+    <script>
+      let result, x, y;
+      result =
+        "<table border = '2' width = '400' cellspacing = '0' cellpadding = '5'";
+      x = y = 1;
+      do {
+        result = result + "<tr>";
+        do {
+          result = result + "<td>" + x + "x" + y + "=" + x * y + "</td>";
+          y++;
+        } while (y <= 10);
+        result = result + "</tr>";
+        y = 1;
+        x++;
+      } while (x <= 10);
+      result = result + "</table>";
+      document.write(result);
+    </script>
+  </body>
+</html>

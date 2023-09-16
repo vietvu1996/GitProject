@@ -12,16 +12,16 @@
         "<table border = '2' width = '400' cellspacing = '0' cellpadding = '5'";
       x = y = 1;
       do {
-        result = result + "<tr>";
+        result += "<tr>";
         do {
-          result = result + "<td>" + x + "x" + y + "=" + x * y + "</td>";
+          result += "<td>" + x + "x" + y + "=" + x * y + "</td>";
           y++;
         } while (y <= 10);
-        result = result + "</tr>";
+        result += "</tr>";
         y = 1;
         x++;
       } while (x <= 10);
-      result = result + "</table>";
+      result += "</table>";
       document.write(result);
     </script>
   </body>

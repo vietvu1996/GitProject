@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nhiệt độ</title>
+  </head>
+  <body>
+    <script>
+      let num = +parseInt(prompt("Nhập số nhiệt độ: "));
+      while (num > 100 || num < 20 || isNaN(num)) {
+        if (isNaN(num)) {
+          alert("Người dùng nhập không phải là số");
+        } else if (num > 100) {
+          alert("Người dùng vui lòng giảm nhiệt độ");
+        } else {
+          alert("Người dùng vui lòng tăng nhiệt độ");
+        }
+        num = +parseInt(prompt("Nhập số nhiệt độ: "));
+      }
+      alert("Người dùng không cần tăng/giảm nhiệt độ");
+    </script>
+  </body>
+</html>

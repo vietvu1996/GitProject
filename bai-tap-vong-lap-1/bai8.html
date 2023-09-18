@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let inputnumber = parseInt(prompt("Vui lòng nhập 1 số"));
+      let randomnumber = Math.floor(Math.random() * inputnumber);
+      let guessnumber = parseInt(prompt("Vui lòng nhập 1 số bạn muốn đoán"));
+      let count = 1;
+      if (guessnumber == randomnumber) {
+        alert("Xin chúc mừng, bạn đã đoán đúng");
+      } else {
+        while (randomnumber != guessnumber) {
+          count++;
+          if (guessnumber > randomnumber) {
+            alert("Số bạn đoán lớn hơn");
+          } else {
+            alert("Số bạn đoán nhỏ hơn");
+          }
+          guessnumber = parseInt(prompt("Vui lòng nhập 1 số bạn muốn đoán"));
+          if (count == 3) {
+            alert("Bạn đã hết số lần đoán");
+            break;
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

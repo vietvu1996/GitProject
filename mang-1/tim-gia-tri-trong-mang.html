@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let value = +prompt("Nhập 1 số: ");
+      let number = [-2, 1, 5, 8, 9, 3];
+      let index = -1;
+      for (let x = 0; x < number.length; x++) {
+        if (value == number[x]) {
+          index = x;
+        }
+      }
+      if (index >= 0) {
+        alert("Giá trị " + value + " được tìm thấy ở " + index);
+      } else {
+        alert("Giá trị không được tìm thấy");
+      }
+    </script>
+  </body>
+</html>

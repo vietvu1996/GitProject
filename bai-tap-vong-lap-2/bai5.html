@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lãi ngân hàng</title>
+  </head>
+  <body>
+    <script>
+      let money = Number(
+        prompt("Nhập số tiền gửi ngân hàng với lãi suất 5%/năm"),
+        0
+      );
+      let month = Number(prompt("Nhập số tháng "), 1);
+      let interestpermonth = 0;
+      let totalinterest = interestpermonth;
+      document.write(
+        "Số tiền bạn gửi là " +
+          money +
+          " VNĐ trong " +
+          month +
+          "với lãi suất 5%/năm"
+      );
+      for (let i = 0; i < month; i++) {
+        interestpermonth = (money * 0.05) / 12;
+        totalinterest += interestpermonth;
+        money += interestpermonth;
+        document.write(
+          "Tiền lãi tháng " +
+            (i + 1) +
+            " là " +
+            interestpermonth.toFixed(0) +
+            " VNĐ <br>"
+        );
+      }
+      document.write(
+        "Tổng tiền lãi của bạn trong " +
+          month +
+          " là " +
+          totalinterest.toFixed(0) +
+          " VNĐ"
+      );
+    </script>
+  </body>
+</html>

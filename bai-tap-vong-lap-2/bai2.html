@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let number = +parseInt(prompt("Nhập 1 số"));
+      let n = 1;
+      if (number == 0 || number == 1) {
+        n = 1;
+        document.write("Số " + number + " có giai thừa là " + n);
+      } else if (number < 0) {
+        alert("Error");
+      } else {
+        for (let i = 1; i <= number; i++) {
+          n *= i;
+        }
+        document.write("Số " + number + " có giai thừa là " + n);
+      }
+    </script>
+  </body>
+</html>

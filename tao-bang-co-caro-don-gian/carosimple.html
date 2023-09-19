@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <table id="caro"></table>
+    <input type="button" value="Thay đổi vị trí" onclick="change()" />
+    <script>
+      let b = document.getElementById("caro");
+      let board = [];
+      let data = "";
+      for (let i = 0; i < 5; i++) {
+        board[i] = new Array(0, 0, 0, 0, 0);
+      }
+      for (let i = 0; i < 5; i++) {
+        data += "<br>";
+        for (let j = 0; j < 5; j++) {
+          data += board[i][j] + "&nbsp;&nbsp;";
+        }
+      }
+      b.innerHTML = data;
+      function change() {
+        let position1 = +prompt("Toạ độ X");
+        let position2 = +prompt("Toạ độ Y");
+        data = "";
+        board[position1][position2] = "x";
+        for (let i = 0; i < 5; i++) {
+          data += "<br/>";
+          for (let j = 0; j < 5; j++) {
+            data += board[i][j] + "&nbsp;&nbsp;";
+          }
+        }
+        b.innerHTML = "<hr/>" + data;
+      }
+    </script>
+  </body>
+</html>

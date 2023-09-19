@@ -6,17 +6,24 @@
     <title>Hình chữ nhật</title>
   </head>
   <body>
+    <input type="text" id="width" />
+    <input type="text" id="height" />
+    <input type="button" value="Vẽ hình chữ nhật" onclick="rectangle()" />
     <script>
-      let w = " ";
-      for (i = 0; i <= 10; i++) {
-        for (j = 0; j <= 30; j++) {
-          if (i == 0 || i == 10 || j == 0 || j == 30) {
-            document.write("<a style = 'color: black'>*<a>");
-          } else {
-            document.write("<a style = 'color: white'>&nbsp&nbsp<a>");
-          } 
+      function rectangle() {
+        let w = " ";
+        let width = document.getElementById("width").value;
+        let height = document.getElementById("height").value;
+        for (i = 0; i <= width; i++) {
+          for (j = 0; j <= height; j++) {
+            if (i == 0 || i == width || j == 0 || j == height) {
+              document.write("<a style = 'color: black'>*<a>");
+            } else {
+              document.write("<a style = 'color: white'>&nbsp&nbsp<a>");
+            }
+          }
+          document.write("<br>");
         }
-        document.write("<br>");
       }
     </script>
   </body>

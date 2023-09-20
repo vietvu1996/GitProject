@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Từ điển</title>
+  </head>
+  <body>
+    <span>Nhập từ: </span>
+    <input type="text" id="tiengviet" />
+    <input type="button" value="Dịch" onclick="dich()" />
+    <br />
+    <p id="result"></p>
+    <script>
+      function dich() {
+        let vietnamese = ["táo", "chuối", "cam", "dâu"];
+        let japanese = ["りんご", "バナナ", "オレンジ", "いちご"];
+        let nhap = document.getElementById("tiengviet").value;
+        let index = japanese.indexOf(nhap);
+        if (index == -1) {
+          document.write("Không tìm thấy kết quả");
+        } else {
+          document.getElementById("result").innerHTML =
+            "Nghĩa của từ " + nhap + " là " + vietnamese[index];
+        }
+      }
+      // Thử copy các từ trong mảng japanese để tra ra tiếng Việt
+    </script>
+  </body>
+</html>

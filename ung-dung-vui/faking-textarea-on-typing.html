@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ứng dụng vui Faking Textarea on Typing</title>
+  </head>
+  <body>
+    <center>
+      <h3>TYPE ANYTHING YOU LIKE</h3>
+      <form action="" name="f">
+        <textarea
+          name="textare"
+          id="textare"
+          cols="30"
+          rows="10"
+          oninput="setTextArea()"
+        ></textarea>
+      </form>
+    </center>
+    <script>
+      let chuoi = "TÔI LÀ ĐỒ NGỐC!!";
+      let cuphap = "";
+      let currentIndex = 0;
+      function setTextArea() {
+        let area = document.f.textare;
+        let inputText = area.value;
+        if (currentIndex < chuoi.length) {
+          cuphap += chuoi[currentIndex];
+          area.value = cuphap;
+          currentIndex++;
+        } else {
+          area.value = ""; // Reset textarea when the entire string is typed
+          currentIndex = 0;
+          cuphap = "";
+        }
+      }
+    </script>
+  </body>
+</html>

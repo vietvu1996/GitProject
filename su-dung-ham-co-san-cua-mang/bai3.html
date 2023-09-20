@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fox</title>
+  </head>
+  <body>
+    <!-- <input type="text" id="input" name="input" />
+    <input type="button" value="Change" onclick="change()" />
+    <p id="result"></p> -->
+    <script>
+      let word = prompt("Nhập 1 đoạn chữ");
+      let character = "";
+      for (let x = 0; x < word.length; x++) {
+        let x1 = word[x];
+        let x2 = word[x].toUpperCase();
+        if (x1 == x2) {
+          x1 = x1.toLowerCase();
+        } else {
+          x1 = x2;
+        }
+        character += x1;
+      }
+      document.write(character);
+      //   let word = prompt("Nhập 1 đoạn chữ");
+      //   let words = word.split(" ");
+      //   for (let x = 0; x < word.length; x++) {
+      //     let word1 = words[x];
+      //     let firstchar = word1.charAt(0).toLowerCase();
+      //     let restofchar = word1.slice(1).toUpperCase();
+      //     words[x] = firstchar + restofchar;
+      //   }
+      //   let result = words.join(" ");
+      //   document.write(result);
+    </script>
+  </body>
+</html>

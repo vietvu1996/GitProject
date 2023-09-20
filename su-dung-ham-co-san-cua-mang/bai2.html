@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Số chẵn</title>
+  </head>
+  <body>
+    <input type="text" id="evennumber" />
+    <input type="button" value="Submit" onclick="run()" />
+    <p id="result"></p>
+    <script>
+      function run() {
+        let number = document.getElementById("evennumber").value;
+        let answer = "";
+        for (let x = 0; x < number.length; x++) {
+          if (+number[x] % 2 == 0 && +number[x + 1] % 2 == 0) {
+            answer += number[x] + "-";
+          } else {
+            answer += number[x];
+          }
+        }
+        document.getElementById("result").innerHTML = "Kết quả là: " + answer;
+      }
+    </script>
+  </body>
+</html>

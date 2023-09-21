@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>TYPING ANYTHING YOU LIKE</h2>
+    <textarea
+      name="textare"
+      id="textare"
+      cols="30"
+      rows="10"
+      onkeydown="typing()"
+    ></textarea>
+    <script>
+      let string = "TÔI LÀ ĐỨA NGỐC!!";
+      let arr = Array.from(string);
+      console.log(arr);
+      result = "";
+      function typing() {
+        let inputlength = document.getElementById("textare").value;
+        for (let i = 0; i < inputlength.length; i++) {
+          result += arr[i];
+          if (i == arr.length) {
+            document.getElementById("textare").value = "";
+            result = "";
+          }
+        }
+        document.getElementById("textare").value = result;
+        result = "";
+        setTimeout("typing()", 1);
+      }
+    </script>
+  </body>
+</html>

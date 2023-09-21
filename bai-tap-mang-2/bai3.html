@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let arr = ["c", "s", "c", "2", "6", "1"];
+      let count = 0;
+      alert("Độ dài chuỗi " + arr.length);
+      for (let x = 0; x < arr.length; x++) {
+        arr[x] = +arr[x];
+
+        if (!isNaN(arr[x])) {
+          count++;
+        }
+      }
+      document.write("Số kí tự trong mảng là: " + count);
+    </script>
+  </body>
+</html>

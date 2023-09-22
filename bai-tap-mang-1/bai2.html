@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //   let mang = [];
+      //   let max = -Infinity;
+      //   let position = 0;
+      //   for (let i = 0; i < mang.length; i++) {
+      //     mang[i] = Number(prompt("Nhập số vào mảng"));
+      //     if (mang[i] > max) {
+      //       max = mang[i];
+      //       position = i;
+      //     }
+      //   }
+      let count = prompt("So luong can lay");
+      let minVal = parseInt(prompt("Gia tri nho nhat"));
+      let maxVal = parseInt(prompt("Gia tri lon nhat"));
+      let array = [];
+
+      let countGenerate = 0;
+      while (countGenerate < count) {
+        let randomNumber = randomInt(minVal, maxVal);
+        if (array.indexOf(randomNumber) === -1) {
+          array.push(randomNumber);
+          countGenerate++;
+        }
+      }
+
+      let maxResult = findMaxInArray(array);
+
+      document.write("Array tao ra la " + array.join(",") + "<br/>");
+      document.write(
+        "Gia tri lon nhat la " +
+          maxResult +
+          " tai vi tri " +
+          array.indexOf(maxResult)
+      );
+
+      function randomInt(min, max) {
+        return Math.floor(Math.random() * (max - min) + min);
+      }
+
+      function findMaxInArray(arrInput) {
+        let maxResult = arrInput[0];
+        for (let i = 0; i < arrInput.length; i++) {
+          if (maxResult < arrInput[i]) {
+            maxResult = arrInput[i];
+          }
+        }
+        return maxResult;
+      }
+
+    </script>
+  </body>
+</html>

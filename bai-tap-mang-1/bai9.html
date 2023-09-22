@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let count = prompt("So luong can lay");
+      let minVal = parseInt(prompt("Gia tri nho nhat"));
+      let maxVal = parseInt(prompt("Gia tri lon nhat"));
+      let array1 = [];
+      let array2 = [];
+      let array3 = [];
+      let array11 = [];
+      function randomInt(min, max) {
+        return Math.floor(Math.random() * (max - min) + min);
+      }
+      function getArray(array, min, max, count) {
+        let countGenerate = 0;
+        while (countGenerate < count) {
+          let randomNumber = randomInt(min, max);
+          if (array.indexOf(randomNumber) === -1) {
+            array.push(randomNumber);
+            countGenerate++;
+          }
+        }
+        return array;
+      }
+      array1 = getArray(array1, minVal, maxVal, count);
+      document.write("Array 1: " + array1 + "<br/>");
+      array2 = getArray(array2, minVal, maxVal, count);
+      document.write("Array 2: " + array2 + "<br/>");
+      array3 = array1.concat(array2);
+      document.write("Array 3: " + array3 + "<br/>");
+      //   class NewArrayRandom {
+      //     constructor(min, max, count) {
+      //       this.min = min;
+      //       this.max = max;
+      //       this.count = count;
+      //     }
+      //     getArray() {
+      //       let countGenerate = 0;
+      //       let arrayThis = [];
+      //       while (countGenerate < count) {
+      //         let randomNumber = randomInt(this.min, this.max);
+      //         if (arrayThis.indexOf(randomNumber) === -1) {
+      //           arrayThis.push(randomNumber);
+      //           countGenerate++;
+      //         }
+      //       }
+      //       return arrayThis;
+      //     }
+      //   }
+      //   array1 = new NewArrayRandom(minVal, maxVal, count);
+      //   array2 = new NewArrayRandom(minVal, maxVal, count);
+      //   array1 = array1.getArray();
+      //   document.write("Array 1: " + array1 + "<br/>");
+      //   array2 = array2.getArray();
+      //   document.write("Array 2: " + array2 + "<br/>");
+      //   array3 = array1.concat(array2);
+      //   document.write("Array 3: " + array3 + "<br/>");
+    </script>
+  </body>
+</html>

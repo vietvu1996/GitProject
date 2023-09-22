@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let count = prompt("So luong can lay");
+      let minVal = parseInt(prompt("Gia tri nho nhat"));
+      let maxVal = parseInt(prompt("Gia tri lon nhat"));
+      let array = [];
+      let countGenerate = 0;
+      let total = 0;
+
+      function randomInt(min, max) {
+        return Math.floor(Math.random() * (max - min) + min);
+      }
+      while (countGenerate < count) {
+        let randomNumber = randomInt(minVal, maxVal);
+        if (array.indexOf(randomNumber) === -1) {
+          array.push(randomNumber);
+          countGenerate++;
+        }
+      }
+      for (let i = 0; i < array.length; i++) {
+        total += array[i];
+      }
+      let average = total / array.length;
+      document.write("Array tao ra la " + array.join(",") + "<br/>");
+      document.write("Giá trị trung bình của các phần tử là: " + average);
+    </script>
+  </body>
+</html>

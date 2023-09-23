@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prime Number</title>
+  </head>
+  <body>
+    <script>
+      function isPrime(number) {
+        if (number <= 1) {
+          return false;
+        }
+        for (let i = 2; i < number; i++) {
+          if (number % i == 0) {
+            return false;
+          }
+        }
+        return true;
+      }
+      function findPrimelessthan10000() {
+        let primes = [];
+        for (let i = 2; i < 10000; i++) {
+          if (isPrime(i)) {
+            primes.push(i);
+          }
+        }
+        return primes;
+      }
+      let m = findPrimelessthan10000();
+      document.write("Các số nguyên tố nhỏ hơn 10000 là:");
+      document.write(m);
+    </script>
+  </body>
+</html>

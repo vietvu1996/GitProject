@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chuyển đổi feet và meters</title>
+  </head>
+  <body>
+    Nhập số foot: <input type="text" id="input1" /> Nhập số meter:
+    <input type="text" id="input2" />
+    <input type="button" value="Change" onclick="change()" />
+    <br />
+    <br />
+    <span id="result1"></span>
+    <span id="result2"></span>
+    <script>
+      function footToMeter(foot) {
+        let meter = 0.305 * foot;
+        return meter;
+      }
+      function meterToFoot(meter) {
+        let foot = 3.279 * meter;
+        return foot;
+      }
+      function change() {
+        let input1 = document.getElementById("input1").value;
+        let input2 = document.getElementById("input2").value;
+        let result1 = footToMeter(parseInt(input1));
+        let result2 = meterToFoot(parseInt(input2));
+        document.getElementById("result1").innerHTML =
+          `Số meter là: ${result1}` + "<br>" + "<br>";
+        document.getElementById("result2").innerHTML = `Số foot là: ${result2}`;
+      }
+    </script>
+  </body>
+</html>

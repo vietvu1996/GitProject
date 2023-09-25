@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form>
+      <h3>Add New Product</h3>
+      <input type="text" placeholder="New Product" id="product" />
+      <input type="button" onclick="add()" value="Add" />
+      <h3>Display All Product</h3>
+      <h4>Product Name</h4>
+      <table id="display"></table>
+    </form>
+    <script>
+      let i = 0;
+      let result = [];
+      let list = [];
+
+      function add() {
+        let newProduct = document.getElementById("product").value;
+        list.push(newProduct);
+        result[i] =
+          '<tr id="product' +
+          i +
+          '"> <td id="name' +
+          i +
+          '">' +
+          newProduct +
+          `</td> <td> <input type="button" onclick="edit(` +
+          i +
+          `)" id ="edit` +
+          i +
+          `" value="Edit"/> </td>
+          <td> <input type="button" onclick="del(` +
+          i +
+          `)" value="Delete" /> </td> </tr>`;
+
+        document.getElementById("display").innerHTML = result.join("");
+        document.getElementById("product").value = "";
+        i++;
+      }
+
+      function edit(x) {
+        let nameCell = document.getElementById("name" + x);
+        let editButton = document.getElementById("edit" + x);
+
+        if (editButton.value === "Edit") {
+          // Chuyển sang chế độ chỉnh sửa
+          let input = document.createElement("input");
+          input.type = "text";
+          input.value = list[x];
+          input.id = "edit-input" + x;
+          nameCell.innerHTML = ""; // Xóa nội dung hiện tại
+          nameCell.appendChild(input);
+          editButton.value = "Submit";
+        } else {
+          // Chuyển trở lại chế độ xem
+          list[x] = document.getElementById("edit-input" + x).value;
+          nameCell.innerHTML = list[x];
+          editButton.value = "Edit";
+        }
+      }
+
+      function del(x) {
+        document.querySelector("#product" + x).remove();
+        list[x] = "";
+        result.splice(x, 1);
+        i--;
+      }
+    </script>
+  </body>
+</html>

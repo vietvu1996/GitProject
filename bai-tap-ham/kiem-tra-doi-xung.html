@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kiểm tra từ đối xứng</title>
+  </head>
+  <body>
+    <script>
+      function isPalindrome(string) {
+        let dai = string.length - 1;
+        let check = true;
+        for (let i = 0; i < string.length; i++) {
+          if (string[i] === string[dai]) {
+            document.write(
+              `Chuỗi ${string} có kí tự ${string[i]} giống với kí tự ${string[dai]} <br>`
+            );
+            dai--;
+          } else {
+            check = false;
+            document.write(
+              `Chuỗi ${string} có kí tự ${string[i]} khác với kí tự ${string[dai]} `
+            );
+            break;
+          }
+        }
+        return check;
+      }
+      let input = prompt("Nhập 1 chuỗi bất kì");
+      if (isPalindrome(input)) {
+        alert("Đây là từ đối xứng");
+      } else {
+        alert("Đây không phải là từ đối xứng");
+      }
+    </script>
+  </body>
+</html>

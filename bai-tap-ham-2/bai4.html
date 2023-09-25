@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bài 4</title>
+  </head>
+  <body>
+    <script>
+      function check(character) {
+        if (character % 2 == 0 || character % 2 == 1) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+      let word = prompt("Nhập 1 kí tự bất kì");
+      let result = check(word);
+      if (result) {
+        alert("Đây là kí tự số");
+      } else {
+        alert("Đây không phải là kí tự số");
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bài 8</title>
+  </head>
+  <body>
+    <script>
+      function interger(number) {
+        let rollover = number.reverse();
+        return rollover;
+      }
+      let array = [];
+      let input = parseInt(prompt("Tổng số bạn muốn nhập"));
+      for (let i = 0; i < input; i++) {
+        let nhap = prompt(`Nhap so thu ${i + 1}`);
+        array.push(nhap);
+      }
+      document.write(`Mảng số đã nhập gồm ${array} <br>`);
+      let so = interger(array);
+      document.write(`Mảng sau khi đã đảo ngược là ${so}`);
+    </script>
+  </body>
+</html>

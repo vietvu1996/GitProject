@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bài 3</title>
+  </head>
+  <body>
+    <script>
+      function baitoan(a, b) {
+        while (isNaN(a) || isNaN(b) || a > b) {
+          if (isNaN(a) || isNaN(b)) {
+            alert("Số không hợp lệ. Vui lòng nhập lại");
+          } else {
+            alert("Số thứ nhất lớn hơn số thứ 2, vui lòng nhập lại");
+          }
+          a = parseInt(prompt("Nhập lại số thứ nhất"));
+          b = parseInt(prompt("Nhập lại số thứ hai"));
+        }
+        let total = a + b;
+        return total;
+      }
+      let firstNumber = parseInt(prompt("Nhập số thứ nhất"));
+      let secondNumber = parseInt(prompt("Nhập số thứ hai"));
+      let number = baitoan(firstNumber, secondNumber);
+      alert(`Tổng của 2 số đã nhập là ${number}`);
+    </script>
+  </body>
+</html>

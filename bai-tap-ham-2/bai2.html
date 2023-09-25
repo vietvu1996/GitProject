@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tính diện tích + chu vi hình tròn</title>
+  </head>
+  <body>
+    <script>
+      function diameterCircle(radius) {
+        let result = 2 * radius * 3.14;
+        return result;
+      }
+      function areaofCircle(radius) {
+        let result = radius * radius * 3.14;
+        return result;
+      }
+      let input = parseInt(prompt("Nhập bán kính"));
+      let ketqua1 = diameterCircle(input);
+      let ketqua2 = areaofCircle(input);
+      alert(`Chu vi hình tròn là ${ketqua1}`);
+      alert(`Diện tích hình tròn là ${ketqua2}`);
+    </script>
+  </body>
+</html>

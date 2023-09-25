@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bài 7</title>
+  </head>
+  <body>
+    <script>
+      function number(a, b) {
+        let array = [b, a];
+        return array;
+      }
+      let sothunhat = parseInt(prompt("Nhập số thứ nhất"));
+      let sothuhai = parseInt(prompt("Nhập số thứ 2"));
+      let result = number(sothunhat, sothuhai);
+      document.write(
+        "2 số đổi chỗ cho nhau là " + result[0] + " và " + result[1]
+      );
+    </script>
+  </body>
+</html>

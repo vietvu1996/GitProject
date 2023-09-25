@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Giai thừa</title>
+  </head>
+  <body>
+    <script>
+      function factorial(number) {
+        let n = 1;
+        if (number == 0 || number == 1) {
+          n = 1;
+        } else if (number < 0) {
+          alert("Error");
+        } else {
+          for (let i = 1; i <= number; i++) {
+            n *= i;
+          }
+        }
+        return n;
+      }
+      let input = parseInt(prompt("Nhập 1 số"));
+      let index = factorial(input);
+      document.write(`Giai thừa của ${input} sẽ = ${index}`);
+    </script>
+  </body>
+</html>

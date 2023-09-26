@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class Temperature {
+        constructor(celsius) {
+          this.celsius = celsius;
+        }
+        getCelsius() {
+          return this.celsius;
+        }
+        setCelsius(celsius) {
+          return this.celsius;
+        }
+        getFahrenheit() {
+          return (9 * this.celsius) / 5 + 32;
+        }
+        getKevin() {
+          return this.celsius + 273.15;
+        }
+      }
+      let temperature = new Temperature(25);
+      let fahrenheit = temperature.getFahrenheit();
+      let kevin = temperature.getKevin();
+      document.write(`Nhiệt độ C đổi sang độ F là  ${fahrenheit} <br>`);
+      document.write(`Nhiệt độ C đổi sang độ K là  ${kevin}`);
+    </script>
+  </body>
+</html>

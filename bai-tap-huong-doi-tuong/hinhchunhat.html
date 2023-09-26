@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bài tập hình chữ nhật</title>
+    <style>
+      /* body {
+        margin: 0;
+      } */
+    </style>
+  </head>
+  <body>
+    <canvas id="mycanvas" style="border: 1px solid black"></canvas>
+    <script>
+      let canvas = document.getElementById("mycanvas");
+      let ctx = canvas.getContext("2d");
+      canvas.width = innerWidth;
+      canvas.height = innerHeight;
+      class Rectangle {
+        constructor(width, height) {
+          this.width = width;
+          this.height = height;
+        }
+        getWidth() {
+          return this.width;
+        }
+        getHeight() {
+          return this.height;
+        }
+        setWidth(width) {
+          this.width = width;
+        }
+        setHeight(height) {
+          this.height = height;
+        }
+        getArea() {
+          return this.width * this.height;
+        }
+        getPerimeter() {
+          return (this.width + this.height) * 2;
+        }
+      }
+      let hinhchunhat = new Rectangle(100, 50);
+      let width = hinhchunhat.getWidth();
+      let height = hinhchunhat.getHeight();
+      ctx.fillStyle = "#FF0000";
+      ctx.fillRect(10, 10, width, height);
+    </script>
+  </body>
+</html>

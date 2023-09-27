@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class Battery {
+        setEnergy(energy) {
+          this.energy = energy;
+        }
+        getEnergy() {
+          return this.energy;
+        }
+        decreaseEnergy() {
+          if (this.energy > 0) {
+            this.energy--;
+          }
+        }
+      }
+      class Flashlamp {
+        setBattery(battery) {
+          this.battery = battery;
+        }
+        getBatteryInfo() {
+          return this.battery.getEnergy();
+        }
+        turnOn() {
+          this.status = true;
+        }
+        turnOff() {
+          this.status = false;
+        }
+        getLight() {
+          if ((this.status = true)) {
+            alert("Sáng");
+          } else {
+            alert("Không sáng");
+          }
+        }
+      }
+      let pin = new Battery();
+      pin.setEnergy(10);
+      let flashlamp = new Flashlamp();
+      flashlamp.setBattery(pin);
+      document.write("Battery info:" + flashlamp.getBatteryInfo() + "<br>");
+      flashlamp.getLight();
+      document.write("Turn on <br>");
+      flashlamp.turnOn();
+      flashlamp.getLight();
+      document.write("Battery info: " + flashlamp.getBatteryInfo() + "<br>");
+      document.write("Turn off<br/>");
+      flashlamp.turnOff();
+      flashlamp.getLight();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Switch and Lamp</title>
+  </head>
+  <body>
+    <script>
+      class electricLamp {
+        constructor(status) {
+          this.status = true;
+        }
+        getStatus() {
+          return this.status;
+        }
+        turnOn() {
+          return (this.status = true);
+        }
+        turnOff() {
+          return (this.status = false);
+        }
+      }
+      class switchButton {
+        constructor(lamp, status) {
+          this.lamp = lamp;
+          this.status = status;
+        }
+        getLamp() {
+          return this.lamp;
+        }
+        switchOn() {
+          this.status = true;
+          document.write("Đèn đã bật" + "<br>");
+        }
+        switchOff() {
+          this.status = false;
+          document.write("Đèn đã tắt" + "<br>");
+        }
+        connectToLamp(electriclamp) {
+          return (this.lamp = electriclamp);
+        }
+      }
+      let electriclamp = new electricLamp();
+      let switchbutton = new switchButton(electriclamp, true);
+      for (i = 0; i < 10; i++) {
+        if (switchbutton.status) {
+          switchbutton.switchOn();
+          switchbutton.status = false;
+        } else {
+          switchbutton.switchOff();
+          switchbutton.status = true;
+        }
+      }
+    </script>
+  </body>
+</html>

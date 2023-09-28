@@ -6,29 +6,113 @@
     <title>Document</title>
   </head>
   <body>
+    <table>
+      <tr>
+        <td>Celcius</td>
+        <td>
+          <input
+            type="number"
+            name="celcius"
+            id="celcius"
+            onchange="convertInput(this.value, this.id)"
+            oninput="convertInput(this.value, this.id)"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td>Fahrenheit</td>
+        <td>
+          <input
+            type="number"
+            name="fahrenheit"
+            id="fahrenheit"
+            onchange="convertInput(this.value, this.id)"
+            oninput="convertInput(this.value, this.id)"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td>Kevin</td>
+        <td>
+          <input
+            type="number"
+            name="kevin"
+            id="kevin"
+            onchange="convertInput(this.value, this.id)"
+            oninput="convertInput(this.value, this.id)"
+          />
+        </td>
+      </tr>
+    </table>
+
     <script>
       class Temperature {
-        constructor(celsius) {
-          this.celsius = celsius;
+        constructor(temperature) {
+          this.temperature = parseFloat(temperature);
         }
-        getCelsius() {
-          return this.celsius;
+        gettemperature() {
+          return this.temperature;
         }
-        setCelsius(celsius) {
-          return this.celsius;
+        settemperature(temperature) {
+          this.temperature = temperature;
         }
-        getFahrenheit() {
-          return (9 * this.celsius) / 5 + 32;
+        getFahrenheitFromC() {
+          return (9 * this.temperature) / 5 - 32;
         }
-        getKevin() {
-          return this.celsius + 273.15;
+        //
+        getFahrenheitFromK() {
+          return (5 / 9) * (this.temperature - 32) + 273.15;
+        }
+
+        getCelciusFromF() {
+          return ((this.temperature - 32) * 5) / 9;
+        }
+        //
+        getCelciusFromK() {
+          return this.temperature + 273.15;
+        }
+
+        getKevinFromC() {
+          return this.temperature - 273.15;
+        }
+        //
+        getKevinFromF() {
+          return (9 / 5) * (this.temperature - 273.15) + 32;
         }
       }
-      let temperature = new Temperature(25);
-      let fahrenheit = temperature.getFahrenheit();
-      let kevin = temperature.getKevin();
-      document.write(`Nhiệt độ C đổi sang độ F là  ${fahrenheit} <br>`);
-      document.write(`Nhiệt độ C đổi sang độ K là  ${kevin}`);
+
+      // let fahrenheit = temperature.getFahrenheit();
+      // let kevin = temperature.getKevin();
+      // document.write(`Nhiệt độ C đổi sang độ F là  ${fahrenheit} <br>`);
+      // document.write(`Nhiệt độ C đổi sang độ K là  ${kevin}`);
+
+      function convertInput(value, id) {
+        let temperature = new Temperature(value);
+        let celciusInput = document.getElementById("celcius");
+        let fahrenheitInput = document.getElementById("fahrenheit");
+        let kevinInput = document.getElementById("kevin");
+        switch (id) {
+          case "celcius":
+            fahrenheitInput.value = temperature.getFahrenheitFromC().toFixed(2);
+            kevinInput.value = temperature.getKevinFromC().toFixed(2);
+
+            break;
+          case "fahrenheit":
+            celciusInput.value = temperature.getCelciusFromF().toFixed(2);
+            kevinInput.value = temperature.getKevinFromF().toFixed(2);
+
+            break;
+          case "kevin":
+            fahrenheitInput.value = temperature.getFahrenheitFromK().toFixed(2);
+            celciusInput.value = temperature.getCelciusFromK().toFixed(2);
+
+            break;
+
+          default:
+            alert("Invalid input");
+            break;
+        }
+      }
     </script>
   </body>
 </html>

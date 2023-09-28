@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class Apple {
+        constructor(weight) {
+          this.weight = weight;
+        }
+        descrease() {
+          if (this.weight > 0) {
+            this.weight--;
+          }
+        }
+        isEmpty() {
+          return this.weight === 0;
+        }
+        getWeight() {
+          return this.weight;
+        }
+      }
+      class Human {
+        constructor(name, gender, weight) {
+          this.name = name;
+          this.gender = gender;
+          this.weight = weight;
+        }
+        isMale() {
+          let male = this.gender.toLowerCase();
+          return male;
+        }
+        say(word) {
+          alert(word);
+        }
+        eat(apple) {
+          if (!apple.isEmpty()) {
+            apple.descrease();
+            this.weight++;
+          }
+        }
+        setName(name) {
+          this.name = name;
+        }
+        getName() {
+          return name;
+        }
+        getWeight() {
+          return this.weight;
+        }
+        checkApple() {
+          return apple.getWeight;
+        }
+        checkPeople() {
+          return `${this.name} name is ${this.name}, gender is ${this.gender} and weight is ${this.weight}`;
+        }
+      }
+      let apple = new Apple(10);
+      let human1 = new Human("Adam", "male", 80);
+      let human2 = new Human("Eva", "female", 60);
+      console.log(human2.isMale());
+      while (apple.getWeight() > 0) {
+        document.write(`${human1.name} an tao <br>`);
+        human1.eat(apple);
+        document.write(`Qua tao con <br> ${apple.getWeight()} đơn vị <br>`);
+        document.write(
+          `Can nang cua ${
+            human1.name
+          } la: ${human1.getWeight()} đơn vị <br><br>`
+        );
+        document.write(`${human2.name} an tao <br>`);
+        human2.eat(apple);
+        document.write(`Qua tao con <br> ${apple.getWeight()} đơn vị <br>`);
+        document.write(
+          `Can nang cua ${
+            human2.name
+          } la: ${human2.getWeight()} đơn vị <br><br>`
+        );
+      }
+    </script>
+  </body>
+</html>
